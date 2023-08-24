@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mcflutter/changing_icon/icon.dart';
-import 'package:mcflutter/changing_icon/banner.dart';
+import 'package:mcflutter/changing_icon/card_upper.dart';
 
 
 void main() {
@@ -22,11 +22,14 @@ class McFlutter extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Flutter McFlutter'),
+        centerTitle: false,
+        title: const Text(
+          'McFlutter',
+          ),
       ),
       body: Column(
         children: [
-          BannerUser(),
+          CardUpper(),
           IconsBar(),
         ],
       ),

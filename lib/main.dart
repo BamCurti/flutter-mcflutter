@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mcflutter/changing_icon/icon.dart';
-import 'package:mcflutter/changing_icon/card_upper.dart';
+import 'package:mcflutter/changing_icon/presentation_card.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +21,7 @@ class McFlutter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: false,
@@ -27,14 +29,7 @@ class McFlutter extends StatelessWidget {
           'McFlutter',
           ),
       ),
-      body: Column(
-        children: [
-          CardUpper(),
-          IconsBar(),
-        ],
-      ),
+      body: SingleChildScrollView(child: PresentationCard())
     );
   }
 }
-
-

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class ChangingIcon extends StatefulWidget {
   final IconData icon;
+  final String name;
 
-  const ChangingIcon({required this.icon});
+  const ChangingIcon({required this.icon, required this.name});
 
   @override
   _ChangingIconState createState() => _ChangingIconState();
@@ -18,6 +19,16 @@ class _ChangingIconState extends State<ChangingIcon> {
       _buttonColor = _buttonColor == Colors.black ? 
       Colors.indigo : 
       Colors.black;
+
+      String name = widget.name;
+      // show snack bar
+       final snackBar = SnackBar(
+        content: Text("You clicked the $name button"),
+        action: SnackBarAction(
+          label: "Undo", 
+          onPressed: () {}),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
     });
   }
 
@@ -44,10 +55,10 @@ class IconsBar extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ChangingIcon(icon: Icons.person),
-        ChangingIcon(icon: Icons.timer),
-        ChangingIcon(icon: Icons.smartphone),
-        ChangingIcon(icon: Icons.phone_android),
+        ChangingIcon(icon: Icons.person, name: "Person"),
+        ChangingIcon(icon: Icons.timer, name: "Timer"),
+        ChangingIcon(icon: Icons.smartphone, name: "Smartphone"),
+        ChangingIcon(icon: Icons.phone_android, name: "Android"),
       ],
     );
   }

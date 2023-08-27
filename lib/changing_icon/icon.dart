@@ -17,8 +17,8 @@ class _ChangingIconState extends State<ChangingIcon> {
   void _changeColor() {
     setState(() {
       _buttonColor = _buttonColor == Colors.black ? 
-      Colors.indigo : 
-      Colors.black;
+        Colors.indigo : 
+        Colors.black;
 
       String name = widget.name;
       // show snack bar
